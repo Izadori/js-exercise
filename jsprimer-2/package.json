@@ -1,0 +1,19 @@
+{
+  "name": "jsprimer-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha test/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^7.2.0",
+    "marked": "^2.0.5"
+  },
+  "devDependencies": {
+    "mocha": "^8.4.0"
+  }
+}
