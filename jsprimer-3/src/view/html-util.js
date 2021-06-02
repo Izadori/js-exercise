@@ -27,7 +27,7 @@ export function escapeSpecialChars(str) {
  * HTML文字列からHTML要素を作成して返す
  * @param {string} html
  */
- export function htmlToElement(html) {
+export function htmlToElement(html) {
   const template = document.createElement("template");
   template.innerHTML = html;
   return template.content.firstElementChild;
@@ -38,7 +38,7 @@ export function escapeSpecialChars(str) {
  * @param {Element} bodyElement コンテナ要素の中身となる要素
  * @param {Element} containerElement コンテナ要素
  */
- export function render(bodyElement, containerElement) {
+export function render(bodyElement, containerElement) {
   // containerElementの中身を空にする
   containerElement.innerHTML = "";
   // containerElementの直下にbodyElementを追加する
