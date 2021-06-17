@@ -36,7 +36,7 @@ export class TodoListView extends EventEmitter {
     const listElement = element`<ul />`;
     const items = this.model.getAllItems();
 
-    items.forEach(item => {
+    items.forEach((item) => {
       const childItem = item.completed
         ? element`<li>
             <input type="checkbox" class="checkbox" checked>
@@ -74,7 +74,7 @@ export class TodoListView extends EventEmitter {
 
   // ToDoリストの追加
   addTodoItem(todo) {
-    if(todo === "") {
+    if (todo === "") {
       return;
     }
 
@@ -89,20 +89,20 @@ export class TodoListView extends EventEmitter {
   }
 
   // ToDoリストの削除
-  deleteTodoItem({id}) {
-    this.model.delete({id});
+  deleteTodoItem({ id }) {
+    this.model.delete({ id });
     this.emitChange();
   }
 
   // ToDoリストの全削除
   deleteAll() {
     const checkboxElements = document.querySelectorAll(".checkbox");
-    checkboxElements.forEach(item => {
+    checkboxElements.forEach((item) => {
       item.removeEventListener("click");
     });
 
     const deleteButtonElements = document.querySelectorAll(".delete");
-    deleteButtonElements.forEach(item => {
+    deleteButtonElements.forEach((item) => {
       item.removeEventListener("click");
     });
 

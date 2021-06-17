@@ -1,4 +1,4 @@
-import { TodoListView } from "./view/TodoListView.js"
+import { TodoListView } from "./view/TodoListView.js";
 
 export class App {
   // コンストラクタ

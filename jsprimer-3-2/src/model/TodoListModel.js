@@ -19,15 +19,15 @@ export class TodoListModel {
     this.items.push({
       title: title,
       id: this.id++,
-      completed: false
+      completed: false,
     });
   }
 
   // リストの完了状態の変更
   update({ id, completed }) {
-    const item = this.items.find(item => item.id === id);
+    const item = this.items.find((item) => item.id === id);
 
-    if(!item) {
+    if (!item) {
       return;
     }
 
@@ -35,14 +35,14 @@ export class TodoListModel {
   }
 
   // リストの削除
-  delete({id}) {
-    const item = this.items.find(item => item.id === id);
+  delete({ id }) {
+    const item = this.items.find((item) => item.id === id);
 
-    if(!item) {
+    if (!item) {
       return;
     }
 
-    this.items = this.items.filter(item => item.id !== id);
+    this.items = this.items.filter((item) => item.id !== id);
   }
 
   // リストの全削除

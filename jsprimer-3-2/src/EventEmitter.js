@@ -9,7 +9,7 @@ export class EventEmitter {
    * @param {Function} listener イベントリスナー
    */
   addEventListener(type, listener) {
-    if(!this._listeners.has(type)) {
+    if (!this._listeners.has(type)) {
       this._listeners.set(type, new Set());
     }
     const listenerSet = this._listeners.get(type);
@@ -22,13 +22,13 @@ export class EventEmitter {
    */
   emit(type) {
     const listenerSet = this._listeners.get(type);
-    if(!listenerSet){
+    if (!listenerSet) {
       return;
     }
 
-    listenerSet.forEach(listener => {
+    listenerSet.forEach((listener) => {
       listener.call(this);
-    })
+    });
   }
 
   /**
@@ -38,12 +38,12 @@ export class EventEmitter {
    */
   removeEventListener(type, listener) {
     const listenerSet = this._listeners.get(type);
-    if(!listenerSet){
+    if (!listenerSet) {
       return;
     }
 
-    listenerSet.forEach(ownListener => {
-      if(listener === ownListener) {
+    listenerSet.forEach((ownListener) => {
+      if (listener === ownListener) {
         listenerSet.delete(listener);
       }
     });
